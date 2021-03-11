@@ -1,0 +1,21 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+::ng-deep {
+  slido-form-group + slido-form-group {
+    margin-top: $spacing-xxl;
+  }
+
+  .form {
+    &__actions {
+      display: flex;
+      justify-content: center;
+      margin-top: $spacing-xxl;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+body {
+  font-family: $font-family;
+}
+
+.heading {
+  text-transform: capitalize;
+  font-family: modish, sans-serif;
+  color: $cl-primary;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-style: normal;
+  margin-bottom: $spacing-xl;
+
+  &--primary {
+    font-size: 7rem;
+    line-height: 7rem;
+
+    @include for-md-down {
+      font-size: 6rem;
+      line-height: 6rem;
+    }
+  }
+
+  &--secondary {
+    font-size: 5rem;
+    line-height: 5rem;
+
+    @include for-md-down {
+      font-size: 4rem;
+      line-height: 4rem;
+    }
+  }
+}
+
+.text {
+  color: $cl-gray-light;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.centered-text {
+  text-align: center;
+}

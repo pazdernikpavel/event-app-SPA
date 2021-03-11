@@ -1,0 +1,29 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+:host {
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: $cl-black-light;
+  padding: $spacing-xl;
+  align-items: center;
+}
+
+.events {
+  &__list {
+    max-width: $container-width;
+    margin-top: $spacing-xl;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    @include for-md-down() {
+      flex: 1 1 auto;
+    }
+  }
+}

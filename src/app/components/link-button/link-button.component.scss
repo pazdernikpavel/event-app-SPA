@@ -1,0 +1,21 @@
+@import 'src/scss/abstracts/variables';
+
+:host {
+  display: flex;
+}
+
+.slido-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: $cl-white;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  line-height: 3rem;
+  letter-spacing: .27rem;
+  font-weight: 700;
+
+  &__icon {
+    margin-left: $spacing-xs;
+  }
+}

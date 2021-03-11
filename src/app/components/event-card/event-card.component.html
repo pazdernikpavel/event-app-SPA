@@ -1,0 +1,51 @@
+<div class="card__side card__side--front"
+     (click)="flipCard()">
+  <div *ngIf="isInPast"
+       class="card__note">
+       This event took a place {{ dayDifference }} days ago.
+  </div>
+  
+  <div [ngStyle]="{'background-image': 'url(' + event.imageUrl + ')'}"
+       class="card__image">
+  </div>
+  
+  <div class="card__metadata">
+  
+    <span class="card__category card__subheading">
+      {{ event.date | date }}
+    </span>
+    
+    <span class="card__name card__name">
+      {{ event.name }}
+    </span>
+    
+    <span class="card__price card__price">
+      {{ event.price }} €
+    </span>
+  
+    <img src="/assets/icons/heart.svg"
+         alt="heart-icon"
+         class="card__icon">
+  
+    <slido-link-button *ngIf="!isInPast"
+                       [useAhrefElement]="false"  
+                       text="Details">
+    </slido-link-button>
+  
+  </div>
+</div>
+
+<div class="card__side card__side--back">
+  <img (click)="flipCard()"
+       src="/assets/icons/close.svg"
+       alt="close-icon"
+       class="card__icon">
+
+  <span class="card__description text">
+    {{ event.description }}
+  </span>
+
+  <slido-button>
+    <span normalState>Buy for {{ event.price }} €</span>
+  </slido-button>
+</div>

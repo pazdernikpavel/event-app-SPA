@@ -1,0 +1,15 @@
+@import 'src/scss/abstracts/variables';
+
+.info-box {
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  margin: $spacing-xxl 0;
+  max-width: 50rem;
+  
+  slido-button {
+    margin-top: $spacing-xl;
+  }
+}

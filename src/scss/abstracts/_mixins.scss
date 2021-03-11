@@ -1,0 +1,24 @@
+//
+// COMMON MIXINS
+//
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//
+// BREAKPOINT MIXINS
+//
+@mixin for-sm-down {
+  @media (max-width: $sm-down) { @content; }
+}
+
+@mixin for-md-down {
+  @media (max-width: $md-down) { @content; }
+}
+
+@mixin for-lg-down {
+  @media (max-width: $lg-down) { @content; }
+}

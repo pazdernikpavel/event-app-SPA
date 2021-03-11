@@ -1,0 +1,17 @@
+<button [type]="type"
+        [disabled]="isLoading || disabled"
+        class="slido-button">
+
+  <ng-container
+    *ngIf="isLoading; then loading; else normal">
+  </ng-container>
+
+  <ng-template #loading>
+    <ng-content select="[loadingState]"></ng-content>
+    <slido-spinner></slido-spinner>
+  </ng-template>
+
+  <ng-template #normal>
+    <ng-content select="[normalState]"></ng-content>
+  </ng-template>
+</button>

@@ -1,0 +1,57 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+:host {
+  display: block;
+  width: $button-width;
+  height: $button-height;
+
+  slido-spinner {
+    margin-left: $spacing-m;
+  }
+
+  &.secondary {
+    .slido-button {
+      background-color: transparent;
+    }
+  }
+
+  @include for-md-down() {
+    width: 100%;
+  }
+}
+
+.slido-button {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  color: $cl-white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 3rem;
+  letter-spacing: .3rem;
+  padding: 0 $spacing-s;
+  border-radius: $border-radius;
+  border: 1px solid $cl-primary;
+  background-color: $cl-primary;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: $default-transition;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:active:not(disabled) {
+    transform: translateY(.2rem);
+    background-color: $cl-primary-darker;
+    border-color: $cl-primary-darker;
+  }
+}

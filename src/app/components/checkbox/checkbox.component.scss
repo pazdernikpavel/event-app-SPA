@@ -1,0 +1,76 @@
+@import 'src/scss/abstracts/variables';
+
+:host {
+  position: relative;
+  padding-bottom: calc(1.2rem + #{$spacing-xxs});
+
+  .slido-error-text {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    position: absolute;
+    color: $cl-error;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.checkbox {
+  &__input {
+    display: none;
+  }
+
+  &__input:checked + &__toggle {
+    &::after {
+      opacity: 1;
+      transform: translateY(-50%) scale(1);
+    }
+  }
+
+  &__toggle {
+    font-size: 1.3rem;
+    color: $cl-gray-dark;
+    font-weight: 600;
+    line-height: 3rem;
+    letter-spacing: 0.04rem;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 4.5rem;
+
+    ::ng-deep {
+      a {
+        margin: 0 $spacing-xxs;
+        color: $cl-gray-dark;
+      }
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      border-radius: $border-radius;
+    }
+    
+    &::before {
+      left: 0;
+      top: 50%;
+      height: 2rem;
+      width: 2rem;
+      border: 2px solid $cl-gray-dark;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      width: 1.2rem;
+      height: 1.2rem;
+      left: .4rem;
+      top: 50%;
+      transform: translateY(-50%) scale(0.001);
+      opacity: 0;
+      transition: $default-transition;
+      background-color: $cl-primary;
+    }
+  }
+}

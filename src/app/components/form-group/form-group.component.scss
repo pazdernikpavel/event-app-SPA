@@ -1,0 +1,46 @@
+@import 'src/scss/abstracts/variables';
+@import 'src/scss/abstracts/mixins';
+
+::ng-deep {
+  .form-group {
+    &__heading {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: $cl-primary;
+      line-height: 3rem;
+      letter-spacing: 0.062rem;
+      margin-bottom: 3rem;
+    }
+
+    &__content {
+      display: flex;
+      flex-flow: column nowrap;
+    }
+
+    &__row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -$spacing-xs;
+
+      slido-input,
+      slido-datepicker,
+      slido-textfield,
+      slido-checkbox {
+        flex: 1 1 auto;
+        margin: 0 $spacing-xs;
+
+        @include for-lg-down() {
+          flex: 1 1 100%;
+        }
+
+        @include for-md-down() {
+          margin-bottom: $spacing-m;
+        }
+      }
+    }
+
+    &__row + &__row {
+      margin-top: $spacing-m;
+    }
+  }
+}

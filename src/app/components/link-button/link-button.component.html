@@ -1,0 +1,19 @@
+<a *ngIf="useAhrefElement"
+   [routerLink]="url"
+   class="slido-link">
+   <ng-container *ngTemplateOutlet="content"></ng-container>
+</a>
+
+<span *ngIf="!useAhrefElement"
+      class="slido-link">
+   <ng-container *ngTemplateOutlet="content"></ng-container>
+</span>
+
+<ng-template #content>
+  <span class="slido-link__text">
+    {{ text }}
+  </span>
+  <img src="/assets/icons/right-arrow.svg"
+       class="slido-link__icon"
+       alt="link-icon">
+</ng-template>

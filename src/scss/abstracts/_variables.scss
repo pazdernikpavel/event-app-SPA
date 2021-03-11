@@ -1,0 +1,64 @@
+//
+// COLORS
+//
+$cl-primary: #FF003D;
+$cl-primary-darker: darken($cl-primary, 10);
+$cl-white: #FFFFFF;
+$cl-black: #000000;
+$cl-black-dark: #0C0C0C;
+$cl-black-light: #141517;
+$cl-black-lightest: #202123;
+$cl-gray: #808080;
+$cl-gray-light: #B0B0B0;
+$cl-gray-lightest: #FAFAFA;
+$cl-gray-dark: #6D6D6D;
+$cl-error: #ed1c24;
+$cl-warning: #fca901;
+$cl-success: #83f596;
+
+//
+// LAYOUT
+//
+$border-radius: .4rem;
+$button-height: 5rem;
+$button-width: 35rem;
+$input-width: 35rem;
+$container-width: 112rem;
+
+//
+// FONTS
+//
+$font-family: "Montserrat", sans-serif;
+
+//
+// SPACINGS
+//
+$spacing-xxs: .5rem;
+$spacing-xs: 1rem;
+$spacing-s: 1.5rem;
+$spacing-m: 2rem;
+$spacing-l: 2.5rem;
+$spacing-xl: 4rem;
+$spacing-xxl: 7rem;
+
+//
+// BREAK POINTS
+//
+$sm-down: 509px;
+$md-down: 900px;
+$lg-down: 1200px;
+
+//
+// Z-INDEX
+// 
+$z-index-hidden: -100;
+$z-index-1: 10;
+$z-index-2: 15;
+$z-index-3: 20;
+$z-index-4: 25;
+$z-index-5: 30;
+
+//
+// ANIMATIONS
+//
+$default-transition: all 150ms ease-in;

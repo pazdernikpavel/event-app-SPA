@@ -1,0 +1,28 @@
+<h1 class="heading heading--primary">
+  Upcoming events
+</h1>
+
+<slido-spinner *ngIf="isLoadingEventList$ | async"
+               [isLarge]="true">
+</slido-spinner>
+
+<ng-container *ngIf="!(isLoadingEventList$ | async) && events && events.length">
+  <div class="events__list">
+    <slido-event-card *ngFor="let event of events"
+                      [event]="event">
+    </slido-event-card>
+  </div>
+
+  <div class="info-box">
+    <h2 class="heading heading--secondary centered-text">Do you have your own event?</h2>
+
+    <span class="text centered-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur dicta minima cumque mollitia animi eligendi corrupti unde beatae quas ratione! Iure, blanditiis! Eveniet omnis quod aliquid beatae similique quibusdam necessitatibus!</span>
+
+    <slido-button [routerLink]="['/', appRoutes.CREATE]">
+      <span normalState>Sign-up event</span>
+    </slido-button>
+  </div>
+  
+  <slido-create-event-button></slido-create-event-button>
+</ng-container>
+

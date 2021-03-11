@@ -1,0 +1,25 @@
+<slido-label *ngIf="!!name && showLabel"
+             [name]="name"
+             [required]="required">
+</slido-label>
+
+<input [type]="type"
+       [name]="name"
+       [id]="id || name"
+       [formControl]="control"
+       [ngClass]="{ 'has-value': control.value }"
+       [ngxDatePicker]="dateInstanceOne"
+       placeholder="Select date"
+       class="slido-datepicker">
+
+<ngx-date-picker #dateInstanceOne></ngx-date-picker>
+
+<span *ngIf="control.hasError('required') && control.touched"
+      class="slido-error-text">
+  <ng-container *ngIf="name; else requiredDefault">
+    {{ name | titlecase }} is <strong>required.</strong>
+  </ng-container>
+  <ng-template #requiredDefault>
+    <strong>Required.</strong>
+  </ng-template>
+</span>

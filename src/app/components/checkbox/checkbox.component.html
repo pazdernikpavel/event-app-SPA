@@ -1,0 +1,19 @@
+<input type="checkbox"
+       class="checkbox__input"
+       [formControl]="control"
+       [name]="name"
+       [id]="name">
+
+<label [for]="name"
+       class="checkbox__toggle">
+  <ng-container [ngTemplateOutlet]="text"></ng-container>
+</label>
+
+<span *ngIf="control.hasError('required') && control.touched"
+      class="slido-error-text">
+  <ng-container *ngIf="requiredText; else default" [ngTemplateOutlet]="requiredText">
+  </ng-container>
+  <ng-template #default>
+    {{ name }} is <strong>required.</strong>
+  </ng-template>
+</span>

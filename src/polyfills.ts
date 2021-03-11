@@ -61,3 +61,7 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+// To enable transition scrolling between pages on Safari
+import smoothscroll from 'smoothscroll-polyfill';
+smoothscroll.polyfill();

@@ -1,0 +1,19 @@
+@import 'src/scss/abstracts/variables';
+
+.slido-label {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  letter-spacing: 0.04rem;
+  color: $cl-gray-dark;
+  font-weight: 600;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+
+  sup {
+    color: $cl-primary;
+    font-size: 1.5rem;
+    margin-left: .2rem;
+  }
+}

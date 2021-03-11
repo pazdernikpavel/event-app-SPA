@@ -1,0 +1,100 @@
+<slido-form [group]="createEventFormGroup" (trigger)="submit()">
+  <slido-form-group>
+    <h2 formGroupHeading class="form-group__heading">Organizer</h2>
+    <div formGroupContent class="form-group__content">
+      <div class="form-group__row">
+        <slido-input [control]="createEventFormGroup.get('organizer').get('firstName')"
+                     placeholder="Bruce"
+                     required="true"
+                     name="First name"
+                     id="firstName">
+        </slido-input>
+    
+        <slido-input [control]="createEventFormGroup.get('organizer').get('lastName')"
+                     placeholder="Wayne"
+                     required="true"
+                     name="Last name"
+                     id="lastName">
+        </slido-input>
+      </div>
+      <div class="form-group__row">
+        <slido-input [control]="createEventFormGroup.get('organizer').get('email')"
+                     placeholder="bruce@wayneenterprise.com"
+                     required="true"
+                     name="Email"
+                     id="email">
+        </slido-input>
+      </div>
+    </div>
+  </slido-form-group>
+
+  <slido-form-group>
+    <h2 formGroupHeading class="form-group__heading">Event</h2>
+    <div formGroupContent class="form-group__content">
+      <div class="form-group__row">
+        <slido-input [control]="createEventFormGroup.get('event').get('name')"
+                     placeholder="Best event of your life"
+                     required="true"
+                     name="Name"
+                     id="eventName">
+        </slido-input>
+    
+        <slido-datepicker [control]="createEventFormGroup.get('event').get('date')"
+                          required="true"
+                          name="Date"
+                          id="eventDate">
+        </slido-datepicker>
+      </div>
+      <div class="form-group__row">
+        <slido-input [control]="createEventFormGroup.get('event').get('capacity')"
+                     required="true"
+                     type="number"
+                     placeholder="1500"
+                     name="Capacity"
+                     id="eventCapacity">
+        </slido-input>
+    
+        <slido-input [control]="createEventFormGroup.get('event').get('price')"
+                     placeholder="99.99"
+                     type="number"
+                     required="true"
+                     name="Price"
+                     id="eventPrice">
+        </slido-input>
+      </div>
+    </div>
+  </slido-form-group>
+
+  <slido-form-group>
+    <div formGroupContent class="form-group__content">
+      <div class="form-group__row">
+        <slido-textfield [control]="createEventFormGroup.get('event').get('description')"
+                         placeholder="Description of your event"
+                         name="description"
+                         id="eventDescription">
+        </slido-textfield>
+      </div>
+      <div class="form-group__row">
+        <slido-checkbox [control]="createEventFormGroup.get('event').get('termsAgreed')"
+                        [text]="termsText"
+                        [requiredText]="termsRequired"
+                        name="terms">
+        </slido-checkbox>
+        <ng-template #termsRequired>
+          Accepting terms of use is <strong>required.</strong>
+        </ng-template>
+        <ng-template #termsText>
+          I agree with the <a href="" target="_blank" rel="noopener noreferrer">terms of use</a>
+        </ng-template>
+      </div>
+    </div>
+  </slido-form-group>
+
+  <div class="form__actions">
+    <slido-button [isLoading]="isCreatingEvent$ | async"
+                  type="submit">
+      <span normalState>Create</span>
+      <span loadingState>Processing</span>
+    </slido-button>
+  </div>
+</slido-form>
