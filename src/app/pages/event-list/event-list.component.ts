@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 
 import { Observable, Subject } from 'rxjs';
@@ -16,7 +16,7 @@ import { getEventList, getEventListError, isLoadingEventList } from '../../state
   templateUrl: './event-list.component.html',
   styleUrls: ['./event-list.component.scss']
 })
-export class EventListComponent {
+export class EventListComponent implements OnDestroy {
   public events: IEvent[];
   public readonly appRoutes = AppRoutes;
   public readonly isLoadingEventList$: Observable<boolean>;
@@ -41,5 +41,10 @@ export class EventListComponent {
 
     this.isLoadingEventList$ = this.store.select(isLoadingEventList);
     this.eventListError$ = this.store.select(getEventListError);
+  }
+
+  public ngOnDestroy(): void {
+    this.ngDestroy$.next();
+    this.ngDestroy$.complete();
   }
 }

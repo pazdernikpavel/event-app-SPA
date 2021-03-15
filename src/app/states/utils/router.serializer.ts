@@ -11,9 +11,7 @@ export class RouterSerializer implements RouterStateSerializer {
 
     while (state.firstChild) state = state.firstChild;
 
-    const { params } = state;
-    const { queryParams } = state;
-    const { component } = state;
+    const { params, queryParams, component } = state;
 
     return {
       url,
